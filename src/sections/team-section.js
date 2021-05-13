@@ -16,8 +16,8 @@ const data = [
   {
     id: 1,
     imgSrc: Member1,
-    altText: 'Jamie Hoyzer',
-    title: 'Jamie Hoyzer',
+    altText: 'Jamie H.',
+    title: 'Jamie H.',
     designation: 'CEO and Co-founder',
     socialProfile: [
       {
@@ -42,9 +42,9 @@ const data = [
   },
   {
     id: 2,
-    imgSrc: Member2,
-    altText: 'Yahya Sidatt',
-    title: 'Yahya Sidatt',
+    imgSrc: Member5,
+    altText: 'Yahya S.',
+    title: 'Yahya S.',
     designation: 'CFO and Co-founder',
     socialProfile: [
       {
@@ -70,8 +70,8 @@ const data = [
   {
     id: 3,
     imgSrc: Member3,
-    altText: 'Bilal Baslar',
-    title: 'Bilal Baslar',
+    altText: 'Bilal B.',
+    title: 'Bilal B.',
     designation: 'CTO and Co-founder',
     socialProfile: [
       {
