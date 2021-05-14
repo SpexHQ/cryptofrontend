@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default {\n  menuItem: [{\n    path: '/',\n    label: 'Home'\n  }, {\n    path: '/',\n    label: 'About us'\n  }, {\n    path: '/',\n    label: 'Policies'\n  }, {\n    path: '/',\n    label: 'FAQ'\n  }, {\n    path: '/',\n    label: 'Contact'\n  }]\n};","map":null,"metadata":{},"sourceType":"module"}
