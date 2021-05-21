@@ -5,6 +5,7 @@ import { Container, Box, Heading, Text, Button } from 'theme-ui';
 import { ThemeProvider } from 'theme-ui';
 import theme from 'theme';
 
+import { useRouter } from 'next/router'
 
 
 // RegEx (Regular Expressions)
@@ -36,8 +37,9 @@ function RegistrationScreen() {
     let lastNameField;
     let emailField;
     let passwordField;
-    let contactField;
-    let addressField;
+    let crypto1Field;
+    let crypto2Field;
+    let crypto3Field;
 
     // To instantiate a FormData object
     const formData = new FormData();
@@ -88,8 +90,9 @@ function RegistrationScreen() {
             formData.append('lastName', lastNameField.value);
             formData.append('email', emailField.value);
             formData.append('password', passwordField.value);
-            formData.append('contactNumber', contactField.value);
-            formData.append('address', addressField.value);
+            formData.append('cryptoChoice1', crypto1Field.value);
+            formData.append('cryptoChoice2', crypto2Field.value);
+            formData.append('cryptoChoice3', crypto3Field.value);
 
             fetch(`http://localhost:3001/user/add`, {
                 method: 'POST',
@@ -110,9 +113,11 @@ function RegistrationScreen() {
         }
     }
 
+    const router = useRouter()
+
     return (
         <ThemeProvider theme={theme}>
-        <section sx={styles.banner} id="home">
+        <section sx={styles.banner.container} id="home">
             <Container sx={styles.banner.container}>
                 <Box sx={styles.contentBox}>
                     <Heading as="h1" variant="heroPrimary">
@@ -157,20 +162,26 @@ function RegistrationScreen() {
                     </Box>
 
                     <Box>
-                        <label for="contactNumber" className="form-label">Contact Number</label>
+                        <label for="cryptoChoice1" className="form-label">Crypto Currency Choice 1</label>
                         <br></br>
-                        <input ref={ (elem)=>contactField = elem } type="text" className="form-control" id="contactNumber" aria-describedby="contactNumber" />
+                        <input ref={ (elem)=>crypto1Field = elem } type="text" className="form-control" id="cryptoChoice1" aria-describedby="cryptoChoice1" />
                     </Box>
 
                     <Box>
-                        <label for="address" className="form-label">Address</label>
+                        <label for="cryptoChoice2" className="form-label">Crypto Currency Choice 2</label>
                         <br></br>
-                        <input ref={ (elem)=>addressField = elem } type="text" className="form-control" id="address" aria-describedby="address" />
+                        <input ref={ (elem)=>crypto2Field = elem } type="text" className="form-control" id="cryptoChoice2" aria-describedby="cryptoChoice2" />
+                    </Box>
+
+                    <Box>
+                        <label for="cryptoChoice3" className="form-label">Crypto Currency Choice 3</label>
+                        <br></br>
+                        <input ref={ (elem)=>crypto3Field = elem } type="text" className="form-control" id="cryptoChoice3" aria-describedby="cryptoChoice3" />
                     </Box>
 
                     {
                         state !== "sending" && state !== "successful" &&
-                        <button onClick={register} variant="primary">Submit</button>
+                        <Button onClick={register} variant="primary">Submit</Button>
                     }
 
                     { 
@@ -190,6 +201,9 @@ function RegistrationScreen() {
                         state === "successful" &&
                         <div className="alert alert-success" role="alert">
                             You have registered successfully!
+                            <br></br>
+                            <br></br>
+                            <Button onClick={() => router.replace('/')} variant="secondary">Home</Button>
                         </div>
                     }
 

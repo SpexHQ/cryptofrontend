@@ -14,6 +14,7 @@ import Package from '../sections/package';
 import TeamSection from '../sections/team-section';
 import TestimonialCard from '../sections/testimonial';
 
+
 export default function IndexPage() {
   return (
     <ThemeProvider theme={theme}>
@@ -29,6 +30,6 @@ export default function IndexPage() {
           <TeamSection />
           <TestimonialCard />
         </Layout>
-    </ThemeProvider>        
+    </ThemeProvider>     
   );
 }
