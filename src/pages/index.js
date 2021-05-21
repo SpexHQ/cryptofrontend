@@ -29,6 +29,6 @@ export default function IndexPage() {
           <TeamSection />
           <TestimonialCard />
         </Layout>
-    </ThemeProvider>
+    </ThemeProvider>        
   );
 }

@@ -17,8 +17,8 @@ export default {
       label: 'FAQ',
     },
     {
-      path: '/',
-      label: 'Contact',
+      path: '/register',
+      label: 'Register',
     },
   ],
 };

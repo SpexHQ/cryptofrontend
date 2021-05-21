@@ -4,8 +4,12 @@ import { Container, Box, Heading, Text, Image, Button } from 'theme-ui';
 import BannerImg from 'assets/banner-thumb.png';
 import ShapeLeft from 'assets/shape-left.png';
 import ShapeRight from 'assets/shape-right.png';
+import RegistrationScreen from 'pages/RegistrationScreen'
+
+import { useRouter } from 'next/router'
 
 export default function Banner() {
+  const router = useRouter()
   return (
     <section sx={styles.banner} id="home">
       <Container sx={styles.banner.container}>
@@ -16,7 +20,7 @@ export default function Banner() {
           <Text as="p" variant="heroSecondary">
             Whether you are new to the world of cryptocurrency or just want to learn more, this webpage is for you. 
           </Text>
-          <Button variant="primary">Explore</Button>
+          <Button onClick={() => router.replace('RegistrationScreen')} variant="primary">Register</Button>
         </Box>
         <Box sx={styles.banner.imageBox}>
           <Image src={BannerImg} alt="banner" />
